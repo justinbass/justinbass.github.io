@@ -1,0 +1,237 @@
+<html>
+
+<head>
+<title>Home</title>
+
+<meta name="generator" content="Created Using Yahoo! PageBuilder 2.61.87">
+<script>
+function updateApparition(c, i) {
+  var name = c.prefix + i;
+  moveLayer(name, randomX(c), randomY(c));
+  setVisible(name, true);
+  var delay = random(c.randomInterval);
+  setTimeout('setVisible("' + name + '", false)', delay);
+  setTimeout('updateApparition(c' + c.uid + ',' + i + ')', delay + c.minInvisibleTime + random(c.randomInterval));
+}
+</script>
+<script src="../../pagebuilder.yahoo.com/members/tools/pagebuilder/html/layers.js"></script>
+<meta http-equiv="Page-Enter" content="RevealTrans(Duration=4,Transition=21)">
+<meta http-equiv="Page-Exit" content="blendTrans(Duration=4)">
+</head>
+<body background="backround1.gif" bgcolor="#FFFFFF" link="#0000FF" vlink="#FF0000" text="#000000"
+ onLoad="window.onresize=new Function('if (navigator.appVersion==\'Netscape\') history.go(0);');"><script type="text/javascript" src="../js/policy.js"></script>
+<script type="text/javascript">
+
+window.onload=function(){
+html = document.body.innerHTML;
+
+checkPolicy(html);
+}
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26341965-1']);
+  _gaq.push(['_setDomainName', '.geocities.ws']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script language="javascript">
+c34          = new config();
+c34.prefix   = "y_tails34";
+c34.images     = new Array ("../../www.geocities.com/clipart/pbi/pictures/Templates/sunny.gif","35","35","../../www.geocities.com/clipart/pbi/pictures/Templates/sunny.gif","35","35","../../www.geocities.com/clipart/pbi/pictures/Templates/sunny.gif","35","35","../../www.geocities.com/clipart/pbi/pictures/Templates/sunny.gif","35","35","../../www.geocities.com/clipart/pbi/pictures/Templates/sunny.gif","35","35","../../www.geocities.com/clipart/pbi/pictures/Templates/sunny.gif","35","35","../../www.geocities.com/clipart/pbi/pictures/Templates/sunny.gif","35","35","../../www.geocities.com/clipart/pbi/pictures/Templates/sunny.gif","35","35","../../www.geocities.com/clipart/pbi/pictures/Templates/sunny.gif","35","35");
+c34.positionX  = 3;
+c34.positionY  = 2;
+c34.posbump    = 5;
+c34.oldx       = new Array();
+c34.oldy       = new Array();
+c34.offsetX    = new Array();
+c34.offsetY    = new Array();
+c34.updateDelay = 1;
+c34.updateDelay = 15 * c34.updateDelay;
+c34.uid        = 34;
+for (i=1; c34.images[i*3] != "" && i < c34.images.length / 3; i++)
+ { c34.imageCount = i; }
+for (i=c34.imageCount; i>=0; i--) {
+ writeImage(c34.images[i * 3], c34.prefix + i, 0, -c34.images[i*3+2]);
+ setVisible(c34.prefix + i, 0);
+ c34.oldx[i] = 0;
+ c34.oldy[i] = -c34.images[i*3+2];
+ c34.offsetX[i] = -c34.images[i*3+1] + c34.images[i*3+1] * ((c34.positionX - 1)/2) + (c34.positionX - 2) * c34.posbump;
+ c34.offsetY[i] = -c34.images[i*3+2] + c34.images[i*3+2] * ((c34.positionY - 1)/2) + (c34.positionY - 2) * c34.posbump;
+}
+function updateMultiTail(c) {
+ if (cursorX + c.offsetX[c.imageCount] == getLayerX(c.prefix + c.imageCount) && cursorY + c.offsetY[c.imageCount] == getLayerY(c.prefix + c.imageCount)) {
+  for (i=c.imageCount;i>0;i--) {  setVisible(c.prefix + i, 0); }
+  if (c.images[0] != "") {
+   moveLayer(c.prefix + 0, cursorX + c.offsetX[0], cursorY + c.offsetY[0]);
+   setVisible(c.prefix + 0, 1);
+  }
+ } else {
+  setVisible(c.prefix + 0, 0);
+  for (i=c.imageCount;i>1;i--) {
+   c.oldx[i] = c.oldx[i-1];
+   c.oldy[i] = c.oldy[i-1];
+  }
+  c.oldx[1] = cursorX;
+  c.oldy[1] = cursorY;
+  for (i=1;i<=c.imageCount;i++) {
+   setVisible(c.prefix + i, 1);
+   moveLayer(c.prefix + i, c.oldx[i] + c.offsetX[i], c.oldy[i] + c.offsetY[i]);
+  }
+ }
+ setTimeout("updateMultiTail(c" + c.uid + ")", c.updateDelay);
+}
+captureXY();
+if (c34.images[3] != "") { updateMultiTail(c34); }
+</script>
+<script>
+if (layerSupport()) {
+c35 = new config();
+c35.uid = 35
+c35.prefix           = "y_apparition35";
+c35.image            = "../../www.geocities.com/clipart/pbi/pictures/Templates/windygray.gif";
+c35.imageWidth       = 72;
+c35.imageHeight      = 43;
+c35.imageCount       = 20;
+c35.minInvisibleTime = 2000;
+c35.randomInterval   = 8000;
+c35.startOnScreen = false;
+writeImages(c35);
+  
+for (var i  = 0; i < c35.imageCount; i++)
+  setTimeout('updateApparition(c35, ' + i + ')', random(c35.randomInterval));
+}
+</script>
+<div id="root" style="position:absolute;top:0;left:0;width:663px;height:1373px">
+<div style="position:absolute;left:8;top:11;width:642;height:58;">
+<table width=642 height=58 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><b><font color="#FF0000" size="+4"><span style="font-size:48"> WELCOME TO MY PAGE!</span></font></b></td>
+</tr></table></div>
+<div style="position:absolute;left:183;top:407;width:361;height:85;">
+<table width=361 height=85 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><b><font size="+1"><span style="font-size:18">Just a note to all veiwers, do not take any jokes personally and dont be insulted, because this whole site is just a big joke (like the one that you visited this &quot;Website&quot;)</span></font></b></td>
+</tr></table></div>
+<div style="position:absolute;left:247;top:512;width:201;height:28;">
+<table width=201 height=28 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="scary.html"><b><font color="#FF0000" size="+2"><span style="font-size:24">Visit my scary page</span></font></b></a></td>
+</tr></table></div>
+<div style="position:absolute;left:274;top:543;width:151;height:22;">
+<table width=151 height=22 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="jokes.html"><b><font color="#FF00FF" size="+1"><span style="font-size:18">Visit my joke page</span></font></b></a></td>
+</tr></table></div>
+<div style="position:absolute;left:127;top:697;width:437;height:31;">
+<table width=437 height=31 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="brady.html"><b><font color="#0000FF" size="+2"><span style="font-size:24">if you dont like this picture, than go here</span></font></b></a></td>
+</tr></table></div>
+<div style="position:absolute;left:287;top:567;width:122;height:125;">
+<table width=122 height=125 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><img height=125 width=122 src="kiffa.jpg" border=0 ></td>
+</tr></table></div>
+<div style="position:absolute;left:302;top:730;width:72;height:72;">
+<table width=72 height=72 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="sure.html"><img height=72 width=72 src="007.gif" border=0 ></a></td>
+</tr></table></div>
+<div style="position:absolute;left:271;top:805;width:129;height:22;">
+<table width=129 height=22 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><span style="font-size:14">Portal to another page</span></td>
+</tr></table></div>
+<div style="position:absolute;left:185;top:964;width:303;height:226;">
+<table width=303 height=226 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><img height=226 width=303 src="Funshark.gif" border=0 ></td>
+</tr></table></div>
+<div style="position:absolute;left:260;top:828;width:154;height:19;">
+<table width=154 height=19 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="question1.html"><span style="font-size:14">take a test by clicking here</span></a></td>
+</tr></table></div>
+<div style="position:absolute;left:33;top:1131;width:610;height:43;">
+<table width=610 height=43 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><b><font size="+3"><span style="font-size:36">Warning, shark attack</span></font></b><b><font color="#FF0000" size="+3"><span style="font-size:36">!!!!!!!!!!!!!!!!!!!!!</span></font></b></td>
+</tr></table></div>
+<div style="position:absolute;left:179;top:855;width:100;height:100;">
+<table width=100 height=100 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><img height=100 width=100 src="walking.gif" border=0 ></td>
+</tr></table></div>
+<div style="position:absolute;left:278;top:1175;width:132;height:26;">
+<table width=132 height=26 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><b><font size="+2"><span style="font-size:24">Just walking</span></font></b></td>
+</tr></table></div>
+<div style="position:absolute;left:221;top:1219;width:220;height:27;">
+<table width=220 height=27 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="cheats.html"><b><font size="+2"><span style="font-size:24">banjo kazooie cheats!</span></font></b></a></td>
+</tr></table></div>
+<div style="position:absolute;left:263;top:1201;width:154;height:17;">
+<table width=154 height=17 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="cartoon1.html"><span style="font-size:14">see a story with animation</span></a></td>
+</tr></table></div>
+<div style="position:absolute;left:279;top:855;width:100;height:100;">
+<table width=100 height=100 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><img height=100 width=100 src="walking2.gif" border=0 ></td>
+</tr></table></div>
+<div style="position:absolute;left:228;top:1345;width:219;height:16;">
+<table width=219 height=16 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><span style="font-size:14">click </span><a href="home2.html"><span style="font-size:14">here</span></a><span style="font-size:14"> to continue to home-page 2</span></td>
+</tr></table></div>
+<div style="position:absolute;left:379;top:855;width:100;height:100;">
+<table width=100 height=100 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><img height=100 width=100 src="floppy_disk_walking_md_wht.gif" border=0 ></td>
+</tr></table></div>
+<div style="position:absolute;left:256;top:1281;width:155;height:16;">
+<table width=155 height=16 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="jokes.html"><span style="font-size:14">Click to go to the joke page</span></a></td>
+</tr></table></div>
+<div style="position:absolute;left:489;top:823;width:130;height:130;">
+<table width=130 height=130 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><img height=130 width=130 src="Burnt.gif" border=0 ></td>
+</tr></table></div>
+<div style="position:absolute;left:501;top:771;width:109;height:48;">
+<table width=109 height=48 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><span style="font-size:14">If this page didn't load fast enough, then dont do this...</span></td>
+</tr></table></div>
+<div style="position:absolute;left:134;top:492;width:445;height:18;">
+<table width=445 height=18 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="Math.html"><span style="font-size:14">Click here to see my math that could change your life forever (partially a joke)</span></a></td>
+</tr></table></div>
+<div style="position:absolute;left:228;top:1311;width:222;height:21;">
+<table width=222 height=21 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="the_fourth_dimension.html"><b><font color="#006666"><span style="font-size:14">A long boring paragraph about stuff</span></font></b></a></td>
+</tr></table></div>
+<div style="position:absolute;left:257;top:1263;width:158;height:18;">
+<table width=158 height=18 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="dragon.html"><b><i><u><span style="font-size:14">Puff the Magic Dragon...</span></b></i></u></a></td>
+</tr></table></div>
+<div style="position:absolute;left:442;top:1170;width:207;height:48;">
+<table width=207 height=48 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><span style="font-size:14">This reminds me of a person named sharkbait... ha... ha... ahem.</span></td>
+</tr></table></div>
+<div style="position:absolute;left:12;top:73;width:639;height:397;">
+<table width=639 height=397 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><span style="font-size:14">Welcome to my webpage. I have another one located </span><a href="http://www.geocities.com/bassj119"><span style="font-size:14">here</span></a><span style="font-size:14">. My name is Fishy And when I wrote this, it was 2004 and I was in middle school. However I made this site when I was seven. I am not removing anything because I am too lazy and dont want to, so keep in mind that I was 7. But besides the point, some of my nicknames are Juju, Fishdog, and JT Fish. I live at (I don't tell my adress) and my phone number is (I dont tell that either). You should be lucky I even told you my nicknames. I have a lucky Ocarina which some people dont like and think is weird. And this is where I stop writing. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~Why are you still here reading this. Begone with you!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br></span></td>
+</tr></table></div>
+<div style="position:absolute;left:284;top:1249;width:85;height:16;">
+<table width=85 height=16 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="A.html"><span style="font-size:14">Hard Numbers</span></a></td>
+</tr></table></div>
+<div style="position:absolute;left:280;top:956;width:109;height:16;">
+<table width=109 height=16 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td bgcolor="#006666"><a href="http://www.xanga.com/home.aspx?user=Elfy_is_cool"><font color="#FF9999"><span style="font-size:14">My sister's website</span></font></a></td>
+</tr></table></div>
+<div style="position:absolute;left:389;top:986;width:240;height:32;">
+<table width=240 height=32 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><span style="font-size:14">When I become autocrat of the world, I will destroy everybody that dislikes Zelda.</span></td>
+</tr></table></div>
+<div style="position:absolute;left:9;top:930;width:241;height:207;">
+<table width=241 height=207 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><span style="font-size:14">&quot;pass the salt please&quot;<br>&quot;</span><b><span style="font-size:14">no</span></b><span style="font-size:14">...&quot;<br></span><b><font size="+4"><span style="font-size:48">&quot;WHAT'D YOU SAY!!!&quot;</span></font></b></td>
+</tr></table></div>
+</div>
+</body>
+
+</html>
